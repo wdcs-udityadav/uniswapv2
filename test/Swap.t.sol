@@ -24,7 +24,7 @@ contract SwapTest is Test {
         assertEq(dai.balanceOf(user), 5000 * 1e18);
         assertEq(weth.balanceOf(user), 0);
         dai.approve(address(swap), 5000 * 1e18);
-        uint256 wethOut = swap.swapTokensToEth(5000 * 1e18, user);
+        uint256 wethOut = swap.swapTokens(5000 * 1e18, user);
         assertEq(dai.balanceOf(user), 0);
         assertEq(weth.balanceOf(user), wethOut);
 
